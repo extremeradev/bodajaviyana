@@ -2,6 +2,11 @@ import "dotenv/config"
 import express from "express"
 import cors from "cors"
 import nodemailer from "nodemailer"
+import path from "path"
+import { fileURLToPath } from "url"
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
+const distPath = path.join(__dirname, "..", "dist")
 
 const app = express()
 app.use(cors())
@@ -48,8 +53,8 @@ app.post("/api/confirmar", async (req, res) => {
   }
 })
 
-app.use(express.static("../dist"))
-app.get("*", (_req, res) => res.sendFile("index.html", { root: "../dist" }))
+app.use(express.static(distPath))
+app.get("*", (_req, res) => res.sendFile(path.join(distPath, "index.html")))
 
 const PORT = process.env.PORT || 3001
 app.listen(PORT, () => console.log(`Servidor en http://localhost:${PORT}`))
