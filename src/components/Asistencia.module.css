@@ -1,0 +1,102 @@
+.section {
+  background: #faf5f0;
+  padding: 3rem 1rem 4rem;
+  text-align: center;
+}
+
+.separator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  max-width: 400px;
+  margin: 0 auto 2.5rem;
+}
+
+.line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #d48a6a);
+}
+
+.separator .line:last-of-type {
+  background: linear-gradient(to left, transparent, #d48a6a);
+}
+
+.title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: #a05a3e;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: #a05a3e;
+  opacity: 0.75;
+  margin-bottom: 2rem;
+}
+
+.form {
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  text-align: left;
+}
+
+.label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  color: #a05a3e;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.input {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  padding: 0.6rem 0.8rem;
+  border: 1.5px solid #e0c8b8;
+  border-radius: 0.5rem;
+  background: #fff;
+  color: #3d3d3d;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.input:focus {
+  border-color: #d48a6a;
+}
+
+select.input {
+  cursor: pointer;
+}
+
+.button {
+  display: inline-block;
+  background: #d48a6a;
+  color: #fff;
+  border: none;
+  padding: 0.8rem 2.5rem;
+  border-radius: 2rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.button:hover {
+  opacity: 0.85;
+}
+
+@media (max-width: 600px) {
+  .title {
+    font-size: 2rem;
+  }
+}
