@@ -1,26 +1,18 @@
 import "dotenv/config"
 import express from "express"
 import cors from "cors"
-import nodemailer from "nodemailer"
+import sgMail from "@sendgrid/mail"
 import path from "path"
 import { fileURLToPath } from "url"
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const distPath = path.join(__dirname, "..", "dist")
 
+sgMail.setApiKey(process.env.SENDGRID_API_KEY)
+
 const app = express()
 app.use(cors())
 app.use(express.json())
-
-const transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com",
-  port: 587,
-  secure: false,
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
-  },
-})
 
 app.post("/api/confirmar", async (req, res) => {
   const { nombre, asiste, personas, autobus, alergias } = req.body
@@ -39,9 +31,9 @@ app.post("/api/confirmar", async (req, res) => {
   `
 
   try {
-    await transporter.sendMail({
-      from: `"Boda Ana & Javi" <${process.env.EMAIL_USER}>`,
-      to: process.env.EMAIL_TO || process.env.EMAIL_USER,
+    await sgMail.send({
+      from: process.env.EMAIL_FROM,
+      to: process.env.EMAIL_TO,
       subject: `Confirmación - ${nombre}`,
       html,
     })
