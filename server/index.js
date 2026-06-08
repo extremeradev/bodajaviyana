@@ -48,5 +48,8 @@ app.post("/api/confirmar", async (req, res) => {
   }
 })
 
+app.use(express.static("../dist"))
+app.get("*", (_req, res) => res.sendFile("index.html", { root: "../dist" }))
+
 const PORT = process.env.PORT || 3001
 app.listen(PORT, () => console.log(`Servidor en http://localhost:${PORT}`))
