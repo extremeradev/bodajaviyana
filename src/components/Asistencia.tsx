@@ -72,7 +72,12 @@ function Asistencia() {
           </label>
 
           <button className={styles.button} type="submit" disabled={cargando}>
-            {cargando ? "Enviando..." : "Confirmar asistencia"}
+            {cargando ? (
+              <span className={styles.spinnerWrap}>
+                <span className={styles.spinner} />
+                Enviando... puede tardar hasta 1 minuto
+              </span>
+            ) : "Confirmar asistencia"}
           </button>
         </form>
       )}
