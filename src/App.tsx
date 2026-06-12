@@ -1,3 +1,4 @@
+import { useState } from "react"
 import Hero from "./components/Hero"
 import Countdown from "./components/Countdown"
 import Story from "./components/Story"
@@ -6,8 +7,12 @@ import Ceremonia from "./components/Ceremonia"
 import Asistencia from "./components/Asistencia"
 import Footer from "./components/Footer"
 import Reveal from "./components/Reveal"
+import Modal from "./components/Modal"
+import MapView from "./components/MapView"
 
 function App() {
+  const [mapa, setMapa] = useState<"ceremonia" | "celebracion" | null>(null)
+
   return (
     <>
       <Hero />
@@ -15,8 +20,8 @@ function App() {
       <Reveal delay={0.15}><Story /></Reveal>
       <Reveal delay={0.1}>
         <div className="sideWrap" style={{ display: 'flex' }}>
-          <div style={{ flex: 1 }}><Ceremonia /></div>
-          <div style={{ flex: 1 }}><Celebracion /></div>
+          <div style={{ flex: 1 }}><Ceremonia onMapa={() => setMapa("ceremonia")} /></div>
+          <div style={{ flex: 1 }}><Celebracion onMapa={() => setMapa("celebracion")} /></div>
         </div>
       </Reveal>
       <svg viewBox="0 0 1440 60" preserveAspectRatio="none" style={{ display: 'block', width: '100%', height: 60 }}>
@@ -36,6 +41,23 @@ function App() {
         </div>
       </Reveal>
       <Reveal delay={0.2}><Footer /></Reveal>
+
+      <Modal open={!!mapa} onClose={() => setMapa(null)}>
+        {mapa === "ceremonia" && (
+          <MapView
+            title="Dónde será"
+            address="Iglesia del Sagrario · Jaén"
+            query="Catedral de la Asunción Jaén"
+          />
+        )}
+        {mapa === "celebracion" && (
+          <MapView
+            title="Dónde será"
+            address="Complejo Juleca · Carr. Bailén-Motril, Km. 23,5 · 23639 Jaén"
+            query="Complejo Juleca Carr. Bailén-Motril Km 23,5 23639 Jaén"
+          />
+        )}
+      </Modal>
     </>
   )
 }
