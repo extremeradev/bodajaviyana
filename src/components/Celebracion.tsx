@@ -29,9 +29,7 @@ function Celebracion() {
           <div className={styles.mapWrapper}>
             <iframe
               src="https://www.google.com/maps?q=Complejo+Juleca+Carr.+Bailén-Motril+Km+23,5+23639+Jaén&output=embed"
-              width="100%"
-              height="100%"
-              style={{ border: 0, position: 'absolute', inset: 0 }}
+              className={styles.mapIframe}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
