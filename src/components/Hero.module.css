@@ -90,8 +90,10 @@
 
 .arrowWrap {
   margin-top: 3rem;
-  padding: 0.5rem 2rem;
+  margin-bottom: 3rem;
+  padding: 1rem 2rem;
   cursor: pointer;
+  touch-action: manipulation;
 }
 
 .arrow {
