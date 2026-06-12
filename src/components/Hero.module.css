@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400&display=swap");
 
 .hero {
   width: 100%;
   height: 100dvh;
   min-height: 100vh;
-  background: url("/foto2.jpg") center / cover no-repeat fixed;
+  background: url("/foto3.jpg") center / cover no-repeat fixed;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -14,17 +14,74 @@
 
 @media (max-width: 600px) {
   .hero {
-    height: 100dvh;
-    min-height: 100dvh;
-    background-size: auto 100%;
+    background-image: url("/foto1.jpg") !important; /* 👈 Cambia solo la foto */
+    height: auto;
+    min-height: 50dvh;
+    background-size: cover;                        /* 👈 Cambia "auto 100%" por "cover" para móviles */
     background-position: center center;
-    background-attachment: scroll;
+    background-attachment: scroll;     
   }
 
   .arrowWrap {
-    margin-top: 1.5rem;
-    margin-bottom: 2rem;
-    padding: 1rem 2rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    padding: 0.1rem 0.2rem;
+  }
+
+  .overlay{
+    display: flex;
+    padding: 1rem !important; /* Resetea el padding-top de 15rem y da un respiro general */
+    justify-content: center;   /* Centra perfectamente el contenido verticalmente */
+  }
+
+  .label {
+    font-family: "Inter", sans-serif;
+    font-weight: 800 !important;
+    font-size: 1.2rem !important;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    margin-bottom: 15rem !important; 
+    margin-top: 2.4rem;
+  }
+
+  .title {
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 400;
+    font-size: 3rem !important;
+    letter-spacing: 0.08em;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+    
+  }
+
+  .arrowWrap {
+    cursor: pointer;
+    touch-action: manipulation;
+    margin-bottom: 4.5rem;
+    padding-top: 0rem !important;
+    margin-top: 2rem !important;
+    margin-bottom: 6rem !important;
+  }
+
+  .sub {
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-size: 1rem !important;
+    opacity: 0.85;
+  }
+
+  .date {
+    font-weight: 300;
+    font-size: 1rem !important;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .line {
+    padding-bottom: 0rem !important;
+    width: 12rem !important;
+
   }
 }
 
@@ -37,6 +94,7 @@
   align-items: center;
   justify-content: center;
   padding: 2rem;
+  padding-top: 15rem;
 }
 
 .wave {
@@ -46,23 +104,24 @@
   width: 100%;
   height: 120px;
   line-height: 0;
+  margin-top: 10rem;
 }
 
 .label {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 300;
-  font-size: 1.2rem;
+  font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.3em;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .title {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: "Cormorant Garamond", serif;
   font-weight: 400;
-  font-size: 7rem;
+  font-size: 5rem;
   letter-spacing: 0.08em;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   line-height: 1.1;
 }
 
@@ -72,23 +131,23 @@
 }
 
 .date {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 300;
-  font-size: 1.2rem;
+  font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.25em;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 }
 
 .line {
   width: 15rem;
   height: 1px;
   background: rgb(255, 255, 255);
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .sub {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: "Cormorant Garamond", serif;
   font-style: italic;
   font-size: 1.6rem;
   opacity: 0.85;
@@ -112,28 +171,11 @@
 }
 
 @keyframes bounce {
-  0%, 100% {
+  0%,
+  100% {
     translate: 0 0;
   }
   50% {
     translate: 0 8px;
-  }
-}
-
-@media (max-width: 600px) {
-  .title {
-    font-size: 3.5rem;
-  }
-
-  .label {
-    font-size: 0.9rem;
-  }
-
-  .date {
-    font-size: 0.9rem;
-  }
-
-  .sub {
-    font-size: 1.1rem;
   }
 }
