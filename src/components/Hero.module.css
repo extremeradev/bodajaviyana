@@ -14,8 +14,11 @@
 
 @media (max-width: 600px) {
   .hero {
-    height: 80dvh;
-    min-height: 80dvh;
+    height: 100dvh;
+    min-height: 100dvh;
+    background-size: auto 100%;
+    background-position: center center;
+    background-attachment: scroll;
   }
 }
 
