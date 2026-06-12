@@ -4,7 +4,7 @@
   width: 100%;
   height: 100dvh;
   min-height: 100vh;
-  background: url("/foto2.jpg") center / cover no-repeat;
+  background: url("/foto2.jpg") center / cover no-repeat fixed;
   display: flex;
   align-items: center;
   justify-content: center;
