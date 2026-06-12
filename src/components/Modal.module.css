@@ -2,8 +2,9 @@
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.6);
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 100;
   padding: 1rem;
   overscroll-behavior: contain;
@@ -17,6 +18,7 @@
   max-height: 90dvh;
   position: relative;
   overflow-y: auto;
+  margin: auto;
 }
 
 .close {
