@@ -1,7 +1,16 @@
-import { type ReactNode } from "react"
+import { useEffect, type ReactNode } from "react"
 import styles from "./Modal.module.css"
 
 function Modal({ open, onClose, children }: { open: boolean; onClose: () => void; children: ReactNode }) {
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden"
+    } else {
+      document.body.style.overflow = ""
+    }
+    return () => { document.body.style.overflow = "" }
+  }, [open])
+
   if (!open) return null
 
   return (
