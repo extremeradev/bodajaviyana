@@ -8,17 +8,23 @@ function Reveal({ children, delay = 0 }: { children: ReactNode; delay?: number }
   useEffect(() => {
     const el = ref.current
     if (!el) return
+    let timeout: ReturnType<typeof setTimeout>
     const obs = new IntersectionObserver(
       ([entry]) => {
+        clearTimeout(timeout)
         if (entry.isIntersecting) {
-          setTimeout(() => setVisible(true), delay * 1000)
-          obs.unobserve(el)
+          timeout = setTimeout(() => setVisible(true), delay * 1000)
+        } else {
+          setVisible(false)
         }
       },
       { threshold: 0.15 }
     )
     obs.observe(el)
-    return () => obs.disconnect()
+    return () => {
+      obs.disconnect()
+      clearTimeout(timeout)
+    }
   }, [delay])
 
   return (
