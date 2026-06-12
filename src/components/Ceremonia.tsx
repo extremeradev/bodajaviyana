@@ -29,7 +29,9 @@ function Ceremonia() {
           <div className={styles.mapWrapper}>
             <iframe
               src="https://www.google.com/maps?q=Catedral+de+la+Asunción+Jaén&output=embed"
-              className={styles.mapIframe}
+              width="100%"
+              height="100%"
+              style={{ border: 0, position: 'absolute', inset: 0 }}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
