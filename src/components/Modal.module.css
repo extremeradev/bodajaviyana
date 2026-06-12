@@ -6,7 +6,6 @@
   place-items: center;
   z-index: 100;
   padding: 1rem;
-  overscroll-behavior: contain;
 }
 
 .modal {
