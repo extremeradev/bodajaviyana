@@ -5,7 +5,7 @@ function Story() {
     <section className={styles.section}>
       <div className={styles.container}>
         <div className={styles.image}>
-          <img src="/bixo.png" alt="Novios" />
+          <img src="/foto2.jpg" alt="Novios" />
         </div>
         <div className={styles.text}>
           <h2>Nuestra historia</h2>

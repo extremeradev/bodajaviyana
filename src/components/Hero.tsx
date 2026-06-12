@@ -4,7 +4,7 @@ function Hero() {
   return (
     <section className={styles.hero}>
       <div className={styles.overlay}>
-        <h2 className={styles.label}>Nos casamos</h2>
+        <h2 className={styles.label}>¡¡ Nos casamos !!</h2>
         <h1 className={styles.title}>
           Ana <span className={styles.ampersand}>&</span> Javi
         </h1>
