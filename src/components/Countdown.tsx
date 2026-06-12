@@ -23,7 +23,7 @@ function Countdown() {
   }, [])
 
   return (
-    <section className={styles.section}>
+    <section className={styles.section} id="inicio">
       <h2 className={styles.title}>Quedan</h2>
       <div className={styles.grid}>
         <div className={styles.block}>

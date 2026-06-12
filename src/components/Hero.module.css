@@ -96,6 +96,7 @@
   border-bottom: 2px solid rgba(255, 255, 255, 0.7);
   rotate: 45deg;
   animation: bounce 2s infinite;
+  cursor: pointer;
 }
 
 @keyframes bounce {
