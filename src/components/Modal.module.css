@@ -14,9 +14,10 @@
   border-radius: 0.5rem;
   max-width: 800px;
   width: 100%;
-  max-height: 90vh;
+  max-height: 90dvh;
   position: relative;
   overflow-y: auto;
+  margin: auto;
 }
 
 .close {
