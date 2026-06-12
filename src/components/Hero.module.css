@@ -88,15 +88,20 @@
   opacity: 0.85;
 }
 
-.arrow {
+.arrowWrap {
   margin-top: 3rem;
+  padding: 0.5rem 2rem;
+  cursor: pointer;
+}
+
+.arrow {
   width: 1.5rem;
   height: 1.5rem;
+  margin: 0 auto;
   border-right: 2px solid rgb(255, 255, 255);
   border-bottom: 2px solid rgba(255, 255, 255, 0.7);
   rotate: 45deg;
   animation: bounce 2s infinite;
-  cursor: pointer;
 }
 
 @keyframes bounce {

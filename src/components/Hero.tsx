@@ -11,7 +11,9 @@ function Hero() {
         <p className={styles.date}>07.11.2026</p>
         <div className={styles.line} />
         <p className={styles.sub}>Nos ilusiona compartir este día con vosotros</p>
-        <div className={styles.arrow} onClick={() => document.getElementById("inicio")?.scrollIntoView({ behavior: "smooth" })} />
+        <div className={styles.arrowWrap} onClick={() => document.getElementById("inicio")?.scrollIntoView({ behavior: "smooth" })}>
+          <div className={styles.arrow} />
+        </div>
       </div>
       <svg className={styles.wave} viewBox="0 0 1440 120" preserveAspectRatio="none">
         <path d="M0,60 C360,120 1080,0 1440,60 L1440,120 L0,120 Z" fill="#faf5f0" />
